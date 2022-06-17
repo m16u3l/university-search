@@ -3,6 +3,7 @@ import { types } from './university.actions';
 
 const INITIAL_STATE = {
   universitiy_list: [],
+  nameSearched: null,
   loading: false,
   loaded: false,
   error: false,
@@ -15,16 +16,12 @@ const onGetUniversityList = (state) => {
   }
 }
 
-const onGetUniversityListSuccessful = (state, action) => {
-debugger
-  return {
-    ...state,
-    universitiy_list: action.payload.data,
-    loading: false,
-    loaded: true,
-  }
-}
-
+const onGetUniversityListSuccessful = (state, { payload }) => ({
+  ...state,
+  universitiy_list: payload.data,
+  loading: false,
+  loaded: true,
+});
 
 const onGetUniversityListFailed = (state) => ({
   ...state,

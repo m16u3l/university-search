@@ -12,7 +12,7 @@ import {
   TableRow,
   Paper,
   Grid,
-  InputBase,
+  TextField,
 } from '@mui/material';
 
 const columns = [
@@ -26,7 +26,7 @@ function createData(name, country, alpha_two_code, state_province) {
   return { name, country, alpha_two_code, state_province };
 }
 
-const UniversityList = ({ universityList }) => {
+const UniversityList = ({ universityList, getUniversityList }) => {
   const rows = universityList.map((university) => createData(university.name, university.country, university.alpha_two_code, university['state-province']))
   const [page, setPage] = React.useState(1);
   const rowsPerPage = 10;
@@ -34,9 +34,11 @@ const UniversityList = ({ universityList }) => {
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   }
+
   const [searched, setSearched] = React.useState("");
   const handleChangeSearch = (event, newSearch) => {
-    setSearched(newSearch)
+    setSearched(newSearch);
+    getUniversityList(event);
   }
 
   return (
@@ -48,10 +50,11 @@ const UniversityList = ({ universityList }) => {
           </Typography>
         </Grid>
         <Grid item xs={4}>
-          <InputBase
+          <TextField
             value={searched}
-            onChange={handleChangeSearch}
+            onChange={e => handleChangeSearch(e.target.value)}
             placeholder="Search…"
+            variant='filled'
             inputProps={{ 'aria-label': 'search' }}
           />
         </Grid>

@@ -15,8 +15,12 @@ const mapStateToProps = ({ university: { universitiy_list } }) => ({
 
 const UniversityListController = ({ getUniversities, universitiy_list }) => {
   useEffect(() => {
-    getUniversities()
+    getUniversities("")
   }, [getUniversities]);
+
+  const getUniversitYListHandleChange = (nameSearched) => {
+    getUniversities(nameSearched)
+  }
 
   let componetToShow = (
     <Box pt={4}>
@@ -29,6 +33,7 @@ const UniversityListController = ({ getUniversities, universitiy_list }) => {
   componetToShow = (
     <UniversityList
       universityList={universitiy_list}
+      getUniversityList={getUniversitYListHandleChange}
     />
   );
   return componetToShow;
