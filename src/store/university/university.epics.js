@@ -16,7 +16,6 @@ export const getUniversityListEpic = (actions$) => actions$.pipe(
   debounceTime(150),
   switchMap(
     ({ payload: nameSearched }) => {
-      debugger
       return from(getUniversityList(nameSearched))
         .pipe(
           map((universityList) => (creators.get_university_list_successful(universityList))),
