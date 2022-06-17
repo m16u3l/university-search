@@ -1,12 +1,12 @@
 import React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../config/MuiTheme';
-import UniversityList from './university/UniversityList';
+import UniversityListController from './university/UniversityListController';
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <UniversityList />
+      <UniversityListController />
     </ThemeProvider>
   );
 };

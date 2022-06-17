@@ -14,8 +14,6 @@ import {
   Grid,
   InputBase,
 } from '@mui/material';
-import { universities } from '../../services/university.service';
-
 
 const columns = [
   { id: 'name', label: 'Name' },
@@ -27,10 +25,9 @@ const columns = [
 function createData(name, country, alpha_two_code, state_province) {
   return { name, country, alpha_two_code, state_province };
 }
-const rows = universities.map((university) => createData(university.name, university.country, university.alpha_two_code, university['state-province']))
 
-const UniversityList = () => {
-
+const UniversityList = ({ universityList }) => {
+  const rows = universityList.map((university) => createData(university.name, university.country, university.alpha_two_code, university['state-province']))
   const [page, setPage] = React.useState(1);
   const rowsPerPage = 10;
 
@@ -41,6 +38,7 @@ const UniversityList = () => {
   const handleChangeSearch = (event, newSearch) => {
     setSearched(newSearch)
   }
+
   return (
     <Box m={1} p={1}>
       <Grid container p={1} m={1}>
@@ -98,7 +96,7 @@ const UniversityList = () => {
 
         <Stack direction="row" justifyContent="end" m={1} p={1} spacing={1}>
           <Pagination
-            count={Math.round((rows.length+5)/rowsPerPage)}
+            count={Math.round((rows.length + 5) / rowsPerPage)}
             color="primary"
             page={page}
             defaultPage={1}
