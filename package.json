@@ -41,5 +41,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "keywords": [
+    "university search",
+    "heroku"
+  ],
+  "engines": {
+    "node": "16.x"
   }
 }
