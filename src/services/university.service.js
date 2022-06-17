@@ -1,7 +1,7 @@
-// import axios from 'axios';
-import { getUniversityListExternal } from './external'
+import axios from 'axios';
+// import { getUniversityListExternal } from './external'
 
-const university_url = 'http//universities.hipolabs.com/search?name='
+const university_url = 'http://universities.hipolabs.com/search?name='
 
 const getUniversityList = async (name = "") => {
   const response = await axios.get(university_url + name);
