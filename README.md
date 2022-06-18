@@ -6,10 +6,20 @@ This project list unversities registred on [https://github.com/Hipo/university-d
 
 You can test the demo here: [https://university-search-react.herokuapp.com/](https://university-search-react.herokuapp.com/)
 
-For this demo we are using a local copy from [http://universities.hipolabs.com/](http://universities.hipolabs.com/)
+This demo is using a fake service, for this demo we are using a local copy from [http://universities.hipolabs.com/](http://universities.hipolabs.com/)
 
 If you run th project locally you need to use the main brach to get the data from the oficial API
 
+## To run locally
+
+To run the project lcoally you need to have installed nodejs v16+
+
+```
+git clone https://github.com/m16u3l/university-search.git
+cd university-search
+npm install
+npm start
+```
 ### Available Scripts
 
 In the project directory, you can run:
