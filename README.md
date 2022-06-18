@@ -1,18 +1,18 @@
 # University search
 
-This project list unversities registred on [https://github.com/Hipo/university-domains-list-api](https://github.com/Hipo/university-domains-list-api) 
+This project list and search unversities registred on [https://github.com/Hipo/university-domains-list-api](https://github.com/Hipo/university-domains-list-api) 
 
 ## Demo
 
 You can test the demo here: [https://university-search-react.herokuapp.com/](https://university-search-react.herokuapp.com/)
 
-This demo is using a fake service, for this demo we are using a local copy from [http://universities.hipolabs.com/](http://universities.hipolabs.com/)
+This demo is running with a fake service on `heroku` branch, for this demo we are using a local copy from [http://universities.hipolabs.com/](http://universities.hipolabs.com/)
 
-If you run th project locally you need to use the main brach to get the data from the oficial API
+If you run th project locally you need to use the `main` brach to get the data from the oficial API
 
 ## To run locally
 
-To run the project lcoally you need to have installed nodejs v16+
+To run the project lcoally you need to have installed nodejs v16+ and excecute the next comands in a terminal.
 
 ```
 git clone https://github.com/m16u3l/university-search.git
