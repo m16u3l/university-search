@@ -1,7 +1,3 @@
-const getUniversityListExternal = (name = "") => {
-  return { data: universityList }
-}
-
 const universityList = [
   {
     "domains": [
@@ -117693,4 +117689,4 @@ const universityList = [
   }
 ]
 
-export { getUniversityListExternal }
+export { universityList }

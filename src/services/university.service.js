@@ -1,13 +1,12 @@
-// import axios from 'axios';
-// import { getUniversityListExternal } from './external'
-
-const university_url = 'http://universities.hipolabs.com/search?name='
+import { universityList } from './external'
+import _ from "lodash";
 
 const getUniversityList = async (name = "") => {
-  const response = await fetch(university_url + name);
-  // const response = await getUniversityListExternal(name);
-  const data = await response.json()
-  return { data };
+  const filterArray = _.filter(universityList, (item) => {
+    if (item.name.includes(name))
+      return item
+  })
+  return { data: filterArray };
 }
 
 export { getUniversityList };
